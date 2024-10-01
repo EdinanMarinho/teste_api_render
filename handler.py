@@ -13,7 +13,7 @@ app = Flask (__name__)
 @app.route('/')
 def home():
     return "<h1> Seja bem vindo! Para acessar a previsão adicione ao link /rossmann/predict, por exemplo link/rossmann/predict</h1>"
-@app.route( '/rossmann/predict', methods=['POST'] )
+@app.route( '/rossmann/predict', methods=['GET','POST'] )
 def rossmann_predict():
     test_json = request.get_json()
 
@@ -46,6 +46,6 @@ def rossmann_predict():
         
 
 if __name__ == '__main__':
-    port = os.environ.get('PORT', 10000 )
+    port = os.environ.get('PORT', 5000 )
     app.run( host='0.0.0.0',port=port, debug=True )
 
