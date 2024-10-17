@@ -8,11 +8,7 @@ from rossmann.Rossmann import Rossmann
 model = pickle.load( open( 'model/model_rossmann.pkl', 'rb' ) )
 
 # iniciando API
-app = Flask (__name__)
-
-@app.route('/')
-def home():
-    return "<h1> Seja bem vindo! Para acessar a previsão adicione ao link /rossmann/predict, por exemplo link/rossmann/predict</h1>"
+app = Flask ( __name__ )
 @app.route( '/rossmann/predict', methods=['POST'] )
 def rossmann_predict():
     test_json = request.get_json()
