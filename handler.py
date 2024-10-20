@@ -4,11 +4,11 @@ import pandas as pd
 from flask             import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 
-# loading model
-# model = pickle.load( open( 'model/model_rossmann.pkl', 'rb' ) )
+loading model
+model = pickle.load( open( 'model/model_rossmann.pkl', 'rb' ) )
 
-# Inicialmente, a variável model está como None para controle de cache
-model = None
+# # Inicialmente, a variável model está como None para controle de cache
+# model = None
 
 # iniciando API
 app = Flask (__name__)
@@ -26,9 +26,9 @@ def rossmann_predict():
         else: # exemplos multiplos
             test_raw = pd.DataFrame( test_json, columns=test_json[0].keys() )
 
-        # Carregar o modelo apenas uma vez
-        if model is None:
-            model = pickle.load(open('model/model_rossmann.pkl', 'rb'))
+        # # Carregar o modelo apenas uma vez
+        # if model is None:
+        #     model = pickle.load(open('model/model_rossmann.pkl', 'rb'))
 
         # Instanciar Classe Rossmann
         pipeline = Rossmann()
