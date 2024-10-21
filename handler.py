@@ -4,11 +4,8 @@ import pandas as pd
 from flask             import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 
-loading model
+#loading model
 model = pickle.load( open( 'model/model_rossmann.pkl', 'rb' ) )
-
-# # Inicialmente, a variável model está como None para controle de cache
-# model = None
 
 # iniciando API
 app = Flask (__name__)
