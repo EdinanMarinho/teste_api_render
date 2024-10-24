@@ -14,7 +14,7 @@ app = Flask (__name__)
 def home():
     return "<h2> Seja Bem-Vindo! Acesse meu portfólio de projetos em https://projetos.edinanmarinho.com.br/ </h2>"
 
-@app.route( '/rossmann/predict', methods=['POST'] )
+@app.route( '/rossmann/predict', methods=['GET','POST'] )
 def rossmann_predict():
     test_json = request.get_json()
 
