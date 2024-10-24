@@ -10,9 +10,11 @@ model = pickle.load( open( 'model/model_rossmann.pkl', 'rb' ) )
 # iniciando API
 app = Flask (__name__)
 
+@app.route('/')
+def home():
+    return "<h2> Seja Bem-Vindo! Acesse meu portfólio de projetos em https://projetos.edinanmarinho.com.br/ </h2>"
 @app.route( '/rossmann/predict', methods=['POST'] )
 def rossmann_predict():
-
     test_json = request.get_json()
 
     if test_json: # tem dados
