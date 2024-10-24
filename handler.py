@@ -13,6 +13,7 @@ app = Flask (__name__)
 @app.route('/')
 def home():
     return "<h2> Seja Bem-Vindo! Acesse meu portfólio de projetos em https://projetos.edinanmarinho.com.br/ </h2>"
+
 @app.route( '/rossmann/predict', methods=['POST'] )
 def rossmann_predict():
     test_json = request.get_json()
@@ -47,4 +48,4 @@ def rossmann_predict():
 
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000 )
-    app.run( host='0.0.0.0', port=port)
+    app.run( host='0.0.0.0', port=port debug=True)
